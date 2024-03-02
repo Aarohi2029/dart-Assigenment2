@@ -1,10 +1,13 @@
+import 'dart:io';
+
 void main() {
-  var sum = 0;
-  var given_list = [1, 2, 3, 4, 5];
+  stdout.write("Enter a number: ");
+  int number = int.parse(stdin.readLineSync() ?? '0');
 
-  for (var i = 0; i < given_list.length; i++) {
-    sum = given_list[0] + given_list[4];
-  }
+  int lastDigit = number % 10;
+  int firstDigit = int.parse(number.toString()[0]);
 
-  print("Sum: $sum");
+  int sum = firstDigit + lastDigit;
+
+  print("Sum of the first and last digits: $sum");
 }

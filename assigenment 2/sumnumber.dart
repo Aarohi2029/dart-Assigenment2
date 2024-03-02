@@ -1,10 +1,13 @@
+import 'dart:io';
+
 void main() {
-  var sum = 0;
-  var given_list = [1, 2, 3, 4, 5];
-
-  for (var i = 0; i < given_list.length; i++) {
-    sum += given_list[i];
+  int sum = 0, num, rem;
+  print("Enter Number : ");
+  num = int.parse(stdin.readLineSync()!);
+  while (num != 0) {
+    rem = num % 10;
+    sum = sum + rem;
+    num = num ~/ 10;
   }
-
-  print("Sum: $sum");
+  print("Sum of digits of the number is$sum");
 }

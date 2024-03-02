@@ -1,6 +1,5 @@
 void main() {
-  var scores = [1, 3, 4, 2];
-  scores[2] = 5;
+  List<int> numbers = [1, 2, 3, 4, 5];
 
-  print(scores);
+  print("Original List: $numbers");
 }

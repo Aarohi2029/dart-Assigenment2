@@ -1,14 +1,13 @@
 import 'dart:io';
 
 void main() {
-  int rows = 6;
-  for (int i = 0; i < rows; i++) {
-    for (int j = 2 * (rows - i); j >= 0; j--) {
+  for (int i = 1; i <= 5; i++) {
+    for (int j = 1; j <= 5 - i; j++) {
       stdout.write(" ");
     }
-    for (int j = 0; j <= i; j++) {
-      stdout.write("* ");
+    for (int k = 1; k <= i; k++) {
+      stdout.write("*");
     }
-    stdout.writeln();
+    stdout.write("\n");
   }
 }

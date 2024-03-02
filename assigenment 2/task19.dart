@@ -1,66 +1,40 @@
 import 'dart:io';
-import 'dart:math';
 
 void main() {
-  var choice;
+  print("This is your menu : ");
+  print("1.Triangle");
+  print("2.Rectangle");
+  print("3.Circle");
 
-  print("Menu:");
-  print("1. Area of Triangle");
-  print("2. Area of Rectangle");
-  print("3. Area of Circle");
+  var base, length, hight, width, radius, PI = 3.14, ans, choice;
 
-  stdout.write("Enter your choice (1-3): ");
+  print("enter your choice: ");
   choice = int.parse(stdin.readLineSync()!);
 
-  if (choice >= 1 && choice <= 3) {
-    switch (choice) {
-      case 1:
-        calculateTriangleArea();
-        break;
-      case 2:
-        calculateRectangleArea();
-        break;
-      case 3:
-        calculateCircleArea();
-        break;
-    }
-  } else {
-    print("Invalid choice. Please choose a number between 1 and 3.");
+  switch (choice) {
+    case 1:
+      print("Enter base : ");
+      base = int.parse(stdin.readLineSync()!);
+      print("Enter hight : ");
+      hight = int.parse(stdin.readLineSync()!);
+      ans = 0.5 * base * hight;
+      print("Triangel area:$ans");
+    case 2:
+      print("Enter length : ");
+      length = int.parse(stdin.readLineSync()!);
+      print("Enter width : ");
+      width = int.parse(stdin.readLineSync()!);
+      ans = length * width;
+      ;
+      print("Rectangle area:$ans");
+
+    case 3:
+      print("Enter radius : ");
+      radius = int.parse(stdin.readLineSync()!);
+      ans = PI * radius * radius;
+      print("circle area:$ans");
+
+    default:
+      print("Invalid Choice");
   }
-}
-
-void calculateTriangleArea() {
-  var base, height, area;
-
-  stdout.write("Enter the base of the triangle: ");
-  base = double.parse(stdin.readLineSync()!);
-
-  stdout.write("Enter the height of the triangle: ");
-  height = double.parse(stdin.readLineSync()!);
-
-  area = 0.5 * base * height;
-  print("Area of the triangle: $area");
-}
-
-void calculateRectangleArea() {
-  var length, width, area;
-
-  stdout.write("Enter the length of the rectangle: ");
-  length = double.parse(stdin.readLineSync()!);
-
-  stdout.write("Enter the width of the rectangle: ");
-  width = double.parse(stdin.readLineSync()!);
-
-  area = length * width;
-  print("Area of the rectangle: $area");
-}
-
-void calculateCircleArea() {
-  var radius, area;
-
-  stdout.write("Enter the radius of the circle: ");
-  radius = double.parse(stdin.readLineSync()!);
-
-  area = pi * pow(radius, 2);
-  print("Area of the circle: $area");
 }
